@@ -34,14 +34,19 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function(response){
-      console.log(response);
-
         $('#test4').append('<h3 >'+response.articles[0].title+'.</h3> <br> <p id="testtitle">'+response.articles[0].description+'</p>');
         $('#test4').append('<h3 >'+response.articles[1].title+'.</h3> <br> <p id="testtitle">'+response.articles[1].description+'</p>');
         $('#test4').append('<h3 >'+response.articles[2].title+'.</h3> <br> <p id="testtitle">'+response.articles[2].description+'</p>');
-
       });
 
+      var secondURL = 'https://www.reisewarnung.net/api?country=';
+
+      $.ajax({
+        url: secondURL,
+        method: "GET"
+      }).then(function(response){
+        console.log(response);
+        });
 
 
   });
