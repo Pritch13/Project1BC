@@ -33,3 +33,11 @@ body {
 .btn {
     background-color: #0885a9;
 }
+
+.loading {
+    margin-top: 100%;
+}
+
+.info p{
+    text-align: center;
+}
