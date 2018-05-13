@@ -43,7 +43,7 @@ body {
 }
 
 .explore-image {
-    width: 80%;
+    width: 90%;
     margin-top: 2%;
 }
 
@@ -63,5 +63,7 @@ body {
 #advisor {
     border: solid red 10px;
     padding: 10px;
+    text-align: center;
+    border-radius: 10px;
 }
 
