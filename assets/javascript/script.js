@@ -62,11 +62,14 @@ $(document).ready(function () {
         $('#advisor').text(health.advisoryText + '!');
         $('#test3').append('<p>'+health.advisories.description+'</p>');
         $('#test2').append('<h3 class="title-font center">'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h3><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+
-        '</p><h3 class="center">'+health.health.diseasesAndVaccinesInfo.Vaccines[1].category+'</h3><ul class="centering-ul"><li>'+health.health.diseasesAndVaccinesInfo.Vaccines[2].category+'</li><li>'+health.health.diseasesAndVaccinesInfo.Vaccines[3].category+'</li><li>'
-        +health.health.diseasesAndVaccinesInfo.Vaccines[4].category+'</li><li>'+health.health.diseasesAndVaccinesInfo.Vaccines[5].category+'</li><li>'+health.health.diseasesAndVaccinesInfo.Vaccines[6].category+'</li><li>'+health.health.diseasesAndVaccinesInfo.Vaccines[7].category+'</li><li>'+health.health.diseasesAndVaccinesInfo.Vaccines[8].category+'</li><li>'+health.health.diseasesAndVaccinesInfo.Vaccines[9].category+'</li></ul>');
+        '</p><h3 class="center id="vaccine-list">'+health.health.diseasesAndVaccinesInfo.Vaccines[1].category+'</h3>');
 
-        console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].category);  
-        console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].description);  
+        for (i = 2; i < health.health.diseasesAndVaccinesInfo.Vaccines.length; i++){
+          console.log(health.health.diseasesAndVaccinesInfo.Vaccines[i].category);
+          $('#test2').append('<p>'+health.health.diseasesAndVaccinesInfo.Vaccines[i].category+'</p>')
+        }
+
+        
 
       });
       
