@@ -32,9 +32,19 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
+<<<<<<< HEAD
       $('#test4').append('<h3 >' + response.articles[0].title + '.</h3> <br> <p id="testtitle">' + response.articles[0].description + '</p>');
       $('#test4').append('<h3 >' + response.articles[1].title + '.</h3> <br> <p id="testtitle">' + response.articles[1].description + '</p>');
       $('#test4').append('<h3 >' + response.articles[2].title + '.</h3> <br> <p id="testtitle">' + response.articles[2].description + '</p>');
+=======
+      
+
+      $('#test4').append('<h5 >' + response.articles[0].title + '.</h5> <p>' + response.articles[0].description +  '</p>' + '<a href ="' + response.articles[0].url +'">Learn more...</a><hr>' );
+      $('#test4').append('<h5 >' + response.articles[1].title + '.</h5> <p>' + response.articles[1].description +  '</p>'+ '<a href ="' + response.articles[1].url +'">Learn more...</a><hr>' );
+      $('#test4').append('<h5 >' + response.articles[2].title + '.</h5> <p>' + response.articles[2].description +  '</p>'+ '<a href ="' + response.articles[2].url +'">Learn more...</a><hr>' );
+
+      
+>>>>>>> 21d1570a3ae3d4905c63edebddc855660e7ca6d0
     });
 
   
@@ -58,6 +68,7 @@ $(document).ready(function () {
       }).then(function (health) {
         console.log(health);
 
+<<<<<<< HEAD
         //Explore
           //Climate Info
         if (health.climate.description == null) {
@@ -93,6 +104,11 @@ $(document).ready(function () {
         //Risks
         $('#advisor').text(health.advisoryText + '!');
         $('#test3').append('<p>'+health.advisories.description+'</p>');
+=======
+
+        $('#test2').append('<h3 class="title-font center">'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h3><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+
+        '</p><h3 class="center id="vaccine-list">'+health.health.diseasesAndVaccinesInfo.Vaccines[1].category+'</h3>');
+>>>>>>> 21d1570a3ae3d4905c63edebddc855660e7ca6d0
 
         //Health
         $('#test2').append('<h3>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h3><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+'</p>');
