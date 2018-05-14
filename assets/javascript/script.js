@@ -7,8 +7,6 @@ function info() {
 }
 
 
-
-
 $(document).ready(function () {
 
   $('.tabs').tabs();
@@ -26,10 +24,10 @@ $(document).ready(function () {
     var countrySelected = $('#options').val();
 
     $('.country-selection').text(countrySelected + '.');
-
-
+    
+    // News API
     var queryURL = 'https://newsapi.org/v2/everything?q=' + countrySelected + '+health&apiKey=a02ec7dfecc14603a47ac925d2dd0335';
-console.log(queryURL);
+
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -43,6 +41,8 @@ console.log(queryURL);
       
     });
 
+  
+    // Convert Country Names to Country Code API
     $.ajax({
       url: 'https://restcountries.eu/rest/v2/name/'+ countrySelected ,
       method: "GET",
@@ -51,8 +51,7 @@ console.log(queryURL);
       
       var cc = data[0].alpha2Code;
 
-
-
+      // Safety/Health API
       $.ajax({
         url: 'https://api.tugo.com/v1/travelsafe/countries/' + cc,
         method: "GET",
@@ -63,26 +62,57 @@ console.log(queryURL);
       }).then(function (health) {
         console.log(health);
 
+        //Explore
+          //Climate Info
+        if (health.climate.description == null) {
+          $('#test1').append('<h4>Climate Description: </h4>');
+          console.log(health.climate.description);
+          console.log("hello there, this is null!");
+          } else  {
+           $('#test1').append('<h4>Climate Description: </h4><p>' + health.climate.description + '</p>');
+           console.log("hello there, there is NOT null");
+           console.log(health.climate.description)
+        }
+
+        for (var i = 0; i < health.climate.climateInfo.length; i++) {
+          $('#test1').append('<h5>' + health.climate.climateInfo[i].category + '</h5>');
+          $('#test1').append('<p>' + health.climate.climateInfo[i].description + '</p>');
+        }
+
+          //Law and Culture Info
+        $('#test1').append('<h4>Law and Culture Information: </h4>');
+
+        for (var i = 0; i < health.lawAndCulture.lawAndCultureInfo.length; i++) {
+          $('#test1').append('<h5>' + health.lawAndCulture.lawAndCultureInfo[i].category + '</h5>');
+          $('#test1').append('<p>' + health.lawAndCulture.lawAndCultureInfo[i].description + '</p>');          
+          console.log("hi");
+        }
+
+      
+        console.log(health.climate.climateInfo);
+        console.log(health.lawAndCulture.lawAndCultureInfo);
+
+        
+
+        //Risks
+        $('#advisor').text(health.advisoryText + '!');
+        $('#test3').append('<p>'+health.advisories.description+'</p>');
 
         $('#test2').append('<h3 class="title-font center">'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h3><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+
         '</p><h3 class="center id="vaccine-list">'+health.health.diseasesAndVaccinesInfo.Vaccines[1].category+'</h3>');
 
-        for (i = 2; i < health.health.diseasesAndVaccinesInfo.Vaccines.length; i++){
-          console.log(health.health.diseasesAndVaccinesInfo.Vaccines[i].category);
-          $('#test2').append('<p>'+health.health.diseasesAndVaccinesInfo.Vaccines[i].category+'</p>')
-        }
+        //Health
+        $('#test2').append('<h3>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h3><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+'</p>');
 
+        console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].category);  
+        console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].description);  
         
 
       });
       
     });
 
-
   });
 
 });
-
-
-
 
