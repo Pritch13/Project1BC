@@ -59,8 +59,7 @@ console.log(queryURL);
       }).then(function (health) {
         console.log(health);
 
-        $('#advisor').text(health.advisoryText + '!');
-        $('#test3').append('<p>'+health.advisories.description+'</p>');
+
         $('#test2').append('<h3 class="title-font center">'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h3><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+
         '</p><h3 class="center id="vaccine-list">'+health.health.diseasesAndVaccinesInfo.Vaccines[1].category+'</h3>');
 
