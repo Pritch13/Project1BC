@@ -1,5 +1,6 @@
 body {
     font-family: didot;
+    overflow: hidden;
 }
 
 .brand-logo {
@@ -10,20 +11,27 @@ body {
     font-size: 20px;
 }
 
+.infoRow {
+    margin: 60px 10px 10px 10px;
+    text-align: center;
+}
+
 .drknow {
-    width: 40%;
-    margin-left: 30%;
+    width: 100%;
     position: relative;
 }
 
 .intro {
-    text-align: center;
-    font-size: 25px;
+    font-size: 50px;
 }
 
 .intro-two {
-    margin-top: -10px;
-    margin-bottom: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    margin-left: 20px;
 }
 
 .submit {
@@ -60,10 +68,38 @@ body {
     font-size: 18px;
 }
 
+/* to test Advisor ID */
 #advisor {
-    border: solid red 10px;
-    padding: 10px;
+    border: solid red 1px;
+    opacity: 0.8; 
+    color: red;
     text-align: center;
     border-radius: 10px;
 }
+
+/* Classes to add depending on if advisoryText is good/caution/bad */
+.warning {
+    border: solid red 1px;
+    opacity: 0.8; 
+    color: red;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.caution {
+    border: solid yellow 1px;
+    opacity: 0.8; 
+    color: yellow;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.clear {
+    border: solid green 1px;
+    opacity: 0.8; 
+    color: green;
+    text-align: center;
+    border-radius: 10px;
+}
+
 
