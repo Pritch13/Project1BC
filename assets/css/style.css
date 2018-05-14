@@ -135,6 +135,15 @@ body {
     font-size: 20px;
 }
 
-#test2 {
-    text-align: center;
+.tabs .tab a {
+    color: #0885a9;
 }
+
+.tabs .tab a.active {
+    color: #0885a9;
+}
+
+.tabs .tab a:hover {
+    color: #0885a9a9;
+}
+

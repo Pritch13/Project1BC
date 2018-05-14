@@ -9,6 +9,8 @@ function info() {
 
 $(document).ready(function () {
 
+
+
   $('.tabs').tabs();
   $('select').formSelect();
   $('.loading-screen').hide();
@@ -62,13 +64,21 @@ $(document).ready(function () {
       }).then(function (health) {
         console.log(health);
 
-        $('#test2').append('<h3 class="title-font center">'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h3><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+
-        '</p><h3 class="center id="vaccine-list">'+health.health.diseasesAndVaccinesInfo.Vaccines[1].category+'</h3>');
+        //Health
+        $('#test2').append('<h5 class="title-font">'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h5><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+
+        '</p><hr><h5>'+health.health.diseasesAndVaccinesInfo.Vaccines[1].category+'</h5>');
 
         for (i = 2; i < health.health.diseasesAndVaccinesInfo.Vaccines.length; i++){
           console.log(health.health.diseasesAndVaccinesInfo.Vaccines[i].category);
           $('#test2').append('<p>'+health.health.diseasesAndVaccinesInfo.Vaccines[i].category+'</p>')
         }
+
+        
+
+        $('#test2').append('<hr><h5>'+health.health.diseasesAndVaccinesInfo.Insects[0].category+'</h5><p>'+health.health.diseasesAndVaccinesInfo.Insects[0].description+'</p><hr>')
+        $('#test2').append('<h5>'+health.health.diseasesAndVaccinesInfo.Malaria[0].category+'</h5><p>'+health.health.diseasesAndVaccinesInfo.Malaria[0].description+'</p><hr>')
+        $('#test2').append('<h5>'+health.health.healthInfo[0].category+'</h5> <p>'+health.health.healthInfo[0].description+'</p><hr>')
+        
 
         //Explore
           //Climate Info
