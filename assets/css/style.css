@@ -130,3 +130,12 @@ body {
 .title-font {
     font-family: 'Playfair Display', serif;
 }
+
+.centering-ul{
+    text-align: center;
+    font-size: 20px;
+}
+
+.center {
+    text-align: center;
+}
