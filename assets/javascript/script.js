@@ -34,7 +34,7 @@ console.log(queryURL);
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-      $('#test4').append('<h5 >' + response.articles[0].title + '.</h5> <p id="testtitle">' + response.articles[0].description +  '</p>' + '<a href ="' + response.articles[0].url +'">Read more...</a>' );
+      $('#test4').append('<h5 >' + response.articles[0].title + '.</h5> <p id="testtitle">' + response.articles[0].description +  '</p>' + '<a href ="' + response.articles[0].url +'">...</a>' );
       $('#test4').append('<h5 >' + response.articles[1].title + '.</h5> <p id="testtitle">' + response.articles[1].description + '</p>');
       $('#test4').append('<h5 >' + response.articles[2].title + '.</h5> <p id="testtitle">' + response.articles[2].description + '</p>');
     });
