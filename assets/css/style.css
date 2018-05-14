@@ -86,7 +86,7 @@ body {
     font-family: 'Playfair Display', serif;
 }
 /* Classes to add depending on if advisoryText is good/caution/bad */
-.warning {
+#advisorWarning {
     border: solid red 1px;
     opacity: 0.8; 
     color: red;
@@ -94,7 +94,7 @@ body {
     border-radius: 10px;
 }
 
-.caution {
+#advisorCaution {
     border: solid yellow 1px;
     opacity: 0.8; 
     color: yellow;
@@ -102,7 +102,7 @@ body {
     border-radius: 10px;
 }
 
-.clear {
+#advisorClear {
     border: solid green 1px;
     opacity: 0.8; 
     color: green;
