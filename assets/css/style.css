@@ -1,9 +1,8 @@
 body {
-    font-family: didot;
+    font-family: 'Playfair Display', serif;
     /* overflow: hidden; */
     height: 100%;
     width: 100%;
-    font-family: 'Playfair Display', serif;
 }
 
 .brand-logo {
@@ -64,11 +63,7 @@ body {
     position: relative;
 }
 
-#testtitle {
-    border-bottom: 2px solid;
-    padding-bottom: 20px;
-    font-size: 18px;
-}
+
 
 
 /* to test Advisor ID */
@@ -140,6 +135,6 @@ body {
     font-size: 20px;
 }
 
-.center {
+#test2 {
     text-align: center;
 }
