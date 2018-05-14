@@ -29,7 +29,7 @@ $(document).ready(function () {
 
 
     var queryURL = 'https://newsapi.org/v2/everything?q=' + countrySelected + '+health&apiKey=a02ec7dfecc14603a47ac925d2dd0335';
-console.log(queryURL);
+    console.log(queryURL);
     $.ajax({
       url: queryURL,
       method: "GET"
