@@ -1,6 +1,5 @@
 body {
-    font-family: didot;
-    overflow: hidden;
+    font-family: 'Playfair Display', serif;
 }
 
 .brand-logo {
@@ -17,21 +16,20 @@ body {
 }
 
 .drknow {
-    width: 100%;
-    position: relative;
+    width: 80%;
 }
 
 .intro {
-    font-size: 50px;
+    text-align: center;
+    font-size: 25px;
 }
 
 .intro-two {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.input-field {
-    margin-left: 20px;
+    margin-top: -10px;
+    margin-bottom: 0;
+    font-size: 20px;
+    margin-top: 15px;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 .submit {
@@ -51,7 +49,7 @@ body {
 }
 
 .explore-image {
-    width: 90%;
+    width: 80%;
     margin-top: 2%;
 }
 
@@ -68,6 +66,7 @@ body {
     font-size: 18px;
 }
 
+
 /* to test Advisor ID */
 #advisor {
     border: solid red 1px;
@@ -75,8 +74,18 @@ body {
     color: red;
     text-align: center;
     border-radius: 10px;
+    font-family: 'Playfair Display', serif;
 }
 
+.drknow2 {
+    width: 100%;
+    margin-left: 50%;
+}
+
+.country-selection {
+    margin-top: 50px;
+    font-family: 'Playfair Display', serif;
+}
 /* Classes to add depending on if advisoryText is good/caution/bad */
 .warning {
     border: solid red 1px;
@@ -102,4 +111,22 @@ body {
     border-radius: 10px;
 }
 
+.welcome-screen {
+    margin-top: 12%;
+}
 
+.intro {
+    font-size: 46px;
+}
+
+.input-field {
+    margin-top: 50px;
+}
+
+.submit {
+    margin-top: 60px;
+}
+
+.title-font {
+    font-family: 'Playfair Display', serif;
+}

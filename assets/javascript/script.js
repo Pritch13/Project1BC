@@ -61,7 +61,7 @@ $(document).ready(function () {
 
         $('#advisor').text(health.advisoryText + '!');
         $('#test3').append('<p>'+health.advisories.description+'</p>');
-        $('#test2').append('<h3>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h3><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+'</p>');
+        $('#test2').append('<h3 class="title-font">'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h3><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+'</p>');
 
         console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].category);  
         console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].description);  
