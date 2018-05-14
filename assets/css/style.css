@@ -64,7 +64,7 @@ body {
 }
 
 #testtitle {
-    border-bottom: 2px solid;
+
     padding-bottom: 20px;
     font-size: 18px;
 }
@@ -139,6 +139,6 @@ body {
     font-size: 20px;
 }
 
-.center {
+#test2 {
     text-align: center;
 }
