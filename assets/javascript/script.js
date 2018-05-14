@@ -59,12 +59,39 @@ $(document).ready(function () {
       }).then(function (health) {
         console.log(health);
 
-        $('#advisor').text(health.advisoryText + '!');
+        if (health.hasAdvisoryWarning==false && health.hasRegionalAdvisory==false) {
+
+        $('#advisorClear').text(health.advisoryText + '!');
+        $("#advisorWarning").hide();
+        $("#advisorCaution").hide();
         $('#test3').append('<p>'+health.advisories.description+'</p>');
         $('#test2').append('<h3 class="title-font">'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h3><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+'</p>');
 
         console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].category);  
-        console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].description);  
+        console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].description); 
+        }
+
+        else if (health.hasAdvisoryWarning==true && health.hasRegionalAdvisory==true) {
+        $('#advisorWarning').text(health.advisoryText + '!');
+        $("#advisorClear").hide();
+        $("#advisorCaution").hide();
+        $('#test3').append('<p>'+health.advisories.description+'</p>');
+        $('#test2').append('<h3 class="title-font">'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h3><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+'</p>');
+
+        console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].category);  
+        console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].description); 
+        }
+
+        else {
+        $('#advisorCaution').text(health.advisoryText + '!');
+        $("#advisorWarning").hide();
+        $("#advisorClear").hide();
+        $('#test3').append('<p>'+health.advisories.description+'</p>');
+        $('#test2').append('<h3 class="title-font">'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h3><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+'</p>');
+
+        console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].category);  
+        console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].description); 
+        }
 
       });
       
