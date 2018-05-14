@@ -66,8 +66,6 @@ $(document).ready(function () {
         console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].category);  
         console.log(health.health.diseasesAndVaccinesInfo.Vaccines[0].description);  
 
-        
-        
       });
       
     });
