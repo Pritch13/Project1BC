@@ -59,8 +59,6 @@ body {
     position: relative;
 }
 
-
-/* to test Advisor ID */
 #advisor {
     border: solid red 1px;
     opacity: 0.8; 
@@ -79,13 +77,14 @@ body {
     margin-top: 50px;
     font-family: 'Playfair Display', serif;
 }
-/* Classes to add depending on if advisoryText is good/caution/bad */
+
 #advisorWarning {
     border: solid red 1px;
     opacity: 0.8; 
     color: red;
     text-align: center;
     border-radius: 10px;
+    padding: 10px;
 }
 
 #advisorCaution {
@@ -94,6 +93,7 @@ body {
     color: orange;
     text-align: center;
     border-radius: 10px;
+    padding: 10px;
 }
 
 #advisorClear {
@@ -102,6 +102,7 @@ body {
     color: green;
     text-align: center;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .welcome-screen {

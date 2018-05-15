@@ -34,13 +34,11 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
 
-
       $('#test4').append('<h5 >' + response.articles[0].title + '</h5> <p>' + response.articles[0].description + '</p>' + '<a href ="' + response.articles[0].url + '"" target="_blank" >Learn more...</a><hr>');
       $('#test4').append('<h5 >' + response.articles[1].title + '</h5> <p>' + response.articles[1].description + '</p>' + '<a href ="' + response.articles[1].url + '"" target="_blank" >Learn more...</a><hr>');
       $('#test4').append('<h5 >' + response.articles[2].title + '</h5> <p>' + response.articles[2].description + '</p>' + '<a href ="' + response.articles[2].url + '"" target="_blank" >Learn more...</a><hr>');
       $('#test4').append('<h5 >' + response.articles[3].title + '</h5> <p>' + response.articles[3].description + '</p>' + '<a href ="' + response.articles[3].url + '"" target="_blank" >Learn more...</a><hr>');
       $('#test4').append('<h5 >' + response.articles[4].title + '</h5> <p>' + response.articles[4].description + '</p>' + '<a href ="' + response.articles[4].url + '"" target="_blank" >Learn more...</a><hr>');
-
 
     });
 
@@ -71,12 +69,15 @@ $(document).ready(function () {
         for (i = 2; i < health.health.diseasesAndVaccinesInfo.Vaccines.length; i++) {
           $('#test2').append('<p>' + health.health.diseasesAndVaccinesInfo.Vaccines[i].category + '</p>')
         }
-        $('#test2').append('<hr><h5>' + health.health.diseasesAndVaccinesInfo.Insects[0].category + '</h5><p>' + health.health.diseasesAndVaccinesInfo.Insects[0].description + '</p><hr><h5>' + health.health.diseasesAndVaccinesInfo.Malaria[0].category + '</h5><p>' + health.health.diseasesAndVaccinesInfo.Malaria[0].description + '</p><hr><h5>' + health.health.healthInfo[0].category + '</h5> <p>' + health.health.healthInfo[0].description + '</p><hr>')
+        $('#test2').append('<hr><h5>' + health.health.diseasesAndVaccinesInfo.Insects[0].category + '</h5><p>' + health.health.diseasesAndVaccinesInfo.Insects[0].description + '</p><hr><h5>' + health.health.healthInfo[0].category + '</h5> <p>' + health.health.healthInfo[0].description + '</p><hr>')
 
 
         //Explore
         //Climate Info
-        $('#test1').append('<h5>Climate Information </h5><p>' + health.climate.description + '</p><hr>');
+
+        if (health.climate.description !== null) {
+          $('#test1').append('<h5>Climate Information </h5><p>' + health.climate.description + '</p><hr>');
+        }
 
         for (var i = 0; i < health.climate.climateInfo.length; i++) {
           $('#test1').append('<h5>' + health.climate.climateInfo[i].category + '</h5>');
@@ -92,22 +93,42 @@ $(document).ready(function () {
 
         //Risks
         if (health.advisoryState == 0) {
-          $('#advisorClear').text(health.advisoryText + '!');
-          $("#advisorWarning").hide();
-          $("#advisorCaution").hide();
-          $('#test3').append('<p>' + health.advisories.description + '</p>');
-        } else if (health.advisoryState == 1) {
-          $('#advisorCaution').text(health.advisoryText + '!');
-          $("#advisorClear").hide();
-          $("#advisorWarning").hide();
-          $('#test3').append('<p>' + health.advisories.description + '</p>');
 
-        } else {
+          $('#advisorClear').text(health.advisoryText + '!');
+          $("#advisorCaution").hide();
+          $("#advisorWarning").hide();
+          $('#test3').append('<hr><h5>' + health.health.diseasesAndVaccinesInfo.Malaria[0].category + '</h5><p>' + health.health.diseasesAndVaccinesInfo.Malaria[0].description + '</p><hr><h5>');
+
+          for (var j = 0; j < health.advisories.regionalAdvisories.length; j++) {
+            $('#test3').append('<h5>' + health.advisories.regionalAdvisories[j].category.substring(health.advisories.regionalAdvisories[j].category.indexOf('Avoid'), j.length) + '</h5>');
+            $('#test3').append('<p>' + health.advisories.regionalAdvisories[j].description.replace("Safety and security situation", "") + '</p><hr>');
+          }
+        }
+
+        else if (health.advisoryState == 1) {
+
+          $('#advisorCaution').text(health.advisoryText + '!');
+          $("#advisorWarning").hide();
+          $("#advisorClear").hide();
+          $('#test3').append('<p>' + health.advisories.description + '</p><hr><h5>' + health.health.diseasesAndVaccinesInfo.Malaria[0].category + '</h5><p>' + health.health.diseasesAndVaccinesInfo.Malaria[0].description + '</p><hr><h5>');
+
+          for (var j = 0; j < health.advisories.regionalAdvisories.length; j++) {
+            $('#test3').append('<h5>' + health.advisories.regionalAdvisories[j].category.substring(health.advisories.regionalAdvisories[j].category.indexOf('Avoid'), j.length) + '</h5>');
+            $('#test3').append('<p>' + health.advisories.regionalAdvisories[j].description.replace("Safety and security situation", "") + '</p><hr>');
+          }
+        }
+
+        else {
+
           $('#advisorWarning').text(health.advisoryText + '!');
           $("#advisorCaution").hide();
           $("#advisorClear").hide();
-          $('#test3').append('<p>' + health.advisories.description + '</p>');
+          $('#test3').append('<p>' + health.advisories.description + '</p><hr><h5>' + health.health.diseasesAndVaccinesInfo.Malaria[0].category + '</h5><p>' + health.health.diseasesAndVaccinesInfo.Malaria[0].description + '</p><hr><h5>');
 
+          for (var j = 0; j < health.advisories.regionalAdvisories.length; j++) {
+            $('#test3').append('<h5>' + health.advisories.regionalAdvisories[j].category.substring(health.advisories.regionalAdvisories[j].category.indexOf('Avoid'), j.length) + '</h5>');
+            $('#test3').append('<p>' + health.advisories.regionalAdvisories[j].description.replace("Safety and security situation", "") + '</p><hr>');
+          }
         }
 
       });
