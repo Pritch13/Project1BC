@@ -103,22 +103,42 @@ $(document).ready(function () {
 
         //Risks
         if (health.advisoryState == 0) {
+
           $('#advisorClear').text(health.advisoryText + '!');
-          $("#advisorWarning").hide();
           $("#advisorCaution").hide();
-          $('#test3').append('<p>'+health.advisories.description+'</p>');
-        } else if (health.advisoryState == 1) {
-          $('#advisorCaution').text(health.advisoryText + '!');
-          $("#advisorClear").hide();
           $("#advisorWarning").hide();
-          $('#test3').append('<p>'+health.advisories.description+'</p>');
+          $('#test3').append('<p>'+health.advisories.description+'</p><hr>');
+
+          for (var j = 0; j < health.advisories.regionalAdvisories.length; j++) {
+            $('#test3').append('<h5>'+health.advisories.regionalAdvisories[j].category.substring(health.advisories.regionalAdvisories[j].category.indexOf('Avoid'), j.length)+'</h5>');
+            $('#test3').append('<p>'+health.advisories.regionalAdvisories[j].description.replace("Safety and security situation", "")+'</p><hr>');
+          }
+        }
+
+        else if (health.advisoryState == 1) {
+
+          $('#advisorCaution').text(health.advisoryText + '!');
+          $("#advisorWarning").hide();
+          $("#advisorClear").hide();
+          $('#test3').append('<p>'+health.advisories.description+'</p><hr>');
           
-        } else  {
+          for (var j = 0; j < health.advisories.regionalAdvisories.length; j++) {
+            $('#test3').append('<h5>'+health.advisories.regionalAdvisories[j].category.substring(health.advisories.regionalAdvisories[j].category.indexOf('Avoid'), j.length)+'</h5>');
+            $('#test3').append('<p>'+health.advisories.regionalAdvisories[j].description.replace("Safety and security situation", "")+'</p><hr>');
+          }  
+        }
+
+        else  {
+
           $('#advisorWarning').text(health.advisoryText + '!');
           $("#advisorCaution").hide();
           $("#advisorClear").hide();
-          $('#test3').append('<p>'+health.advisories.description+'</p>');
-         
+          $('#test3').append('<p>'+health.advisories.description+'</p><hr>');
+    
+          for (var j = 0; j < health.advisories.regionalAdvisories.length; j++) {
+            $('#test3').append('<h5>'+health.advisories.regionalAdvisories[j].category.substring(health.advisories.regionalAdvisories[j].category.indexOf('Avoid'), j.length)+'</h5>');
+            $('#test3').append('<p>'+health.advisories.regionalAdvisories[j].description.replace("Safety and security situation", "")+'</p><hr>');
+          }
         }
 
       });
