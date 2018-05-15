@@ -16,6 +16,7 @@ $(document).ready(function () {
 
 
   $('.submit-button').on('click', function () {
+   
     $('.welcome-screen').fadeOut(600);
     $('.loading-screen').fadeIn(600);
     setTimeout(loader, 4000);
@@ -34,9 +35,17 @@ $(document).ready(function () {
     }).then(function (response) {
       
 
+<<<<<<< HEAD
       $('#test4').append('<h5 >' + response.articles[0].title + '</h5> <p>' + response.articles[0].description +  '</p>' + '<a href ="' + response.articles[0].url +'">Learn more...</a><hr>' );
       $('#test4').append('<h5 >' + response.articles[1].title + '</h5> <p>' + response.articles[1].description +  '</p>'+ '<a href ="' + response.articles[1].url +'">Learn more...</a><hr>' );
       $('#test4').append('<h5 >' + response.articles[2].title + '</h5> <p>' + response.articles[2].description +  '</p>'+ '<a href ="' + response.articles[2].url +'">Learn more...</a><hr>' );
+=======
+      $('#test4').append('<h5 >' + response.articles[0].title + '.</h5> <p>' + response.articles[0].description +  '</p>' + '<a href ="' + response.articles[0].url +'"" target="_blank" >Learn more...</a><hr>' );
+      $('#test4').append('<h5 >' + response.articles[1].title + '.</h5> <p>' + response.articles[1].description +  '</p>'+ '<a href ="' + response.articles[1].url +'"" target="_blank" >Learn more...</a><hr>' );
+      $('#test4').append('<h5 >' + response.articles[2].title + '.</h5> <p>' + response.articles[2].description +  '</p>'+ '<a href ="' + response.articles[2].url +'"" target="_blank" >Learn more...</a><hr>' );
+      $('#test4').append('<h5 >' + response.articles[3].title + '.</h5> <p>' + response.articles[3].description +  '</p>'+ '<a href ="' + response.articles[3].url +'"" target="_blank" >Learn more...</a><hr>' );
+      $('#test4').append('<h5 >' + response.articles[4].title + '.</h5> <p>' + response.articles[4].description +  '</p>'+ '<a href ="' + response.articles[4].url +'"" target="_blank" >Learn more...</a><hr>' );
+>>>>>>> c30e72fceba7738eaf281ecebf7753a8a075a9e6
 
       
     });
