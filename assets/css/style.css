@@ -95,9 +95,9 @@ body {
 }
 
 #advisorCaution {
-    border: solid yellow 1px;
+    border: solid orange 1px;
     opacity: 0.8; 
-    color: yellow;
+    color: orange;
     text-align: center;
     border-radius: 10px;
 }
@@ -162,3 +162,4 @@ body {
 .content {
     margin-top: 60px;
 }
+

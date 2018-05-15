@@ -73,11 +73,7 @@ $(document).ready(function () {
           $('#test2').append('<p>'+health.health.diseasesAndVaccinesInfo.Vaccines[i].category+'</p>')
         }
 
-        
-
-        $('#test2').append('<hr><h5>'+health.health.diseasesAndVaccinesInfo.Insects[0].category+'</h5><p>'+health.health.diseasesAndVaccinesInfo.Insects[0].description+'</p><hr>')
-        $('#test2').append('<h5>'+health.health.diseasesAndVaccinesInfo.Malaria[0].category+'</h5><p>'+health.health.diseasesAndVaccinesInfo.Malaria[0].description+'</p><hr>')
-        $('#test2').append('<h5>'+health.health.healthInfo[0].category+'</h5> <p>'+health.health.healthInfo[0].description+'</p><hr>')
+        $('#test2').append('<hr><h5>'+health.health.diseasesAndVaccinesInfo.Insects[0].category+'</h5><p>'+health.health.diseasesAndVaccinesInfo.Insects[0].description+'</p><hr><h5>'+health.health.diseasesAndVaccinesInfo.Malaria[0].category+'</h5><p>'+health.health.diseasesAndVaccinesInfo.Malaria[0].description+'</p><hr><h5>'+health.health.healthInfo[0].category+'</h5> <p>'+health.health.healthInfo[0].description+'</p><hr>')
         
 
         //Explore
@@ -113,7 +109,7 @@ $(document).ready(function () {
         
 
         //Risks
-        if (health.hasAdvisoryWarning==false && health.hasRegionalAdvisory==false) {
+        if (health.advisoryState == 0) {
 
           $('#advisorClear').text(health.advisoryText + '!');
           $("#advisorWarning").hide();
@@ -123,7 +119,7 @@ $(document).ready(function () {
 
         }
 
-        else if (health.hasAdvisoryWarning==true && health.hasRegionalAdvisory==true) {
+        else if (health.advisoryState == 1) {
           $('#advisorCaution').text(health.advisoryText + '!');
           $("#advisorClear").hide();
           $("#advisorWarning").hide();
