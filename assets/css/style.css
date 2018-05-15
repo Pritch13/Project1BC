@@ -86,7 +86,7 @@ body {
     font-family: 'Playfair Display', serif;
 }
 /* Classes to add depending on if advisoryText is good/caution/bad */
-.warning {
+#advisorWarning {
     border: solid red 1px;
     opacity: 0.8; 
     color: red;
@@ -94,15 +94,15 @@ body {
     border-radius: 10px;
 }
 
-.caution {
-    border: solid yellow 1px;
+#advisorCaution {
+    border: solid orange 1px;
     opacity: 0.8; 
-    color: yellow;
+    color: orange;
     text-align: center;
     border-radius: 10px;
 }
 
-.clear {
+#advisorClear {
     border: solid green 1px;
     opacity: 0.8; 
     color: green;
@@ -135,6 +135,31 @@ body {
     font-size: 20px;
 }
 
-#test2 {
-    text-align: center;
+.tabs .tab a {
+    color: #0da5cf;
 }
+
+.tabs .tab a:hover {
+    color: #044658a9;
+}
+
+.tabs .indicator {
+    background-color: #10c7fa;
+} 
+
+
+.tabs .tab a.active {
+    background-color: #10c9fc23;
+    color: #0da5cf;
+}
+
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: #10c9fc23;
+    color: #0da5cf;
+}
+
+.content {
+    margin-top: 60px;
+}
+
