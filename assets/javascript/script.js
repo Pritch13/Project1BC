@@ -50,7 +50,6 @@ $(document).ready(function () {
       url: 'https://restcountries.eu/rest/v2/name/'+ countrySelected ,
       method: "GET",
     }).then(function (data) {
-      // console.log(data[0].alpha2Code);
       
       var cc = data[0].alpha2Code;
 
@@ -85,21 +84,20 @@ $(document).ready(function () {
           
         } else  {
 
-           $('#test1').append('<h5>Climate Information: </h5><p>' + health.climate.description + '</p><hr>');
+           $('#test1').append('<h5>Climate Information </h5><p>' + health.climate.description + '</p><hr>');
           
         }
 
         for (var i = 0; i < health.climate.climateInfo.length; i++) {
 
-          $('#test1').append('<h6>' + health.climate.climateInfo[i].category + '</h6>');
+          $('#test1').append('<h5>' + health.climate.climateInfo[i].category + '</h5>');
           $('#test1').append('<p>' + health.climate.climateInfo[i].description + '</p><hr>');
         }
 
           //Law and Culture Info
-        $('#test1').append('<h5>Law and Culture Information: </h5>');
 
         for (var i = 0; i < health.lawAndCulture.lawAndCultureInfo.length; i++) {
-          $('#test1').append('<h6>' + health.lawAndCulture.lawAndCultureInfo[i].category + '</h6>');
+          $('#test1').append('<h5>' + health.lawAndCulture.lawAndCultureInfo[i].category + '</h5>');
           $('#test1').append('<p>' + health.lawAndCulture.lawAndCultureInfo[i].description + '</p><hr>');          
         }
 
