@@ -9,8 +9,6 @@ function info() {
 
 $(document).ready(function () {
 
-
-
   $('.tabs').tabs();
   $('select').formSelect();
   $('.loading-screen').hide();
@@ -37,11 +35,17 @@ $(document).ready(function () {
     }).then(function (response) {
       
 
+<<<<<<< HEAD
+      $('#test4').append('<h5 >' + response.articles[0].title + '</h5> <p>' + response.articles[0].description +  '</p>' + '<a href ="' + response.articles[0].url +'">Learn more...</a><hr>' );
+      $('#test4').append('<h5 >' + response.articles[1].title + '</h5> <p>' + response.articles[1].description +  '</p>'+ '<a href ="' + response.articles[1].url +'">Learn more...</a><hr>' );
+      $('#test4').append('<h5 >' + response.articles[2].title + '</h5> <p>' + response.articles[2].description +  '</p>'+ '<a href ="' + response.articles[2].url +'">Learn more...</a><hr>' );
+=======
       $('#test4').append('<h5 >' + response.articles[0].title + '.</h5> <p>' + response.articles[0].description +  '</p>' + '<a href ="' + response.articles[0].url +'"" target="_blank" >Learn more...</a><hr>' );
       $('#test4').append('<h5 >' + response.articles[1].title + '.</h5> <p>' + response.articles[1].description +  '</p>'+ '<a href ="' + response.articles[1].url +'"" target="_blank" >Learn more...</a><hr>' );
       $('#test4').append('<h5 >' + response.articles[2].title + '.</h5> <p>' + response.articles[2].description +  '</p>'+ '<a href ="' + response.articles[2].url +'"" target="_blank" >Learn more...</a><hr>' );
       $('#test4').append('<h5 >' + response.articles[3].title + '.</h5> <p>' + response.articles[3].description +  '</p>'+ '<a href ="' + response.articles[3].url +'"" target="_blank" >Learn more...</a><hr>' );
       $('#test4').append('<h5 >' + response.articles[4].title + '.</h5> <p>' + response.articles[4].description +  '</p>'+ '<a href ="' + response.articles[4].url +'"" target="_blank" >Learn more...</a><hr>' );
+>>>>>>> c30e72fceba7738eaf281ecebf7753a8a075a9e6
 
       
     });
@@ -68,7 +72,7 @@ $(document).ready(function () {
         console.log(health);
 
         //Health
-        $('#test2').append('<h5 class="title-font">'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h5><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+
+        $('#test2').append('<h5>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].category+'</h5><p>'+health.health.diseasesAndVaccinesInfo.Vaccines[0].description+
         '</p><hr><h5>'+health.health.diseasesAndVaccinesInfo.Vaccines[1].category+'</h5>');
 
         for (i = 2; i < health.health.diseasesAndVaccinesInfo.Vaccines.length; i++){
@@ -82,55 +86,44 @@ $(document).ready(function () {
         //Explore
           //Climate Info
         if (health.climate.description == null) {
-          $('#test1').append('<h4>Climate Description: </h4>');
-          console.log(health.climate.description);
-          console.log("hello there, this is null!");
-          } else  {
-           $('#test1').append('<h4>Climate Description: </h4><p>' + health.climate.description + '</p>');
-           console.log("hello there, there is NOT null");
-           console.log(health.climate.description)
+          $('#test1').append('<h5>Climate Information: </h5>');
+          // console.log(health.climate.description);
+          // console.log("hello there, this is null!");
+        } else  {
+           $('#test1').append('<h5>Climate Information: </h5><p>' + health.climate.description + '</p><hr>');
+          //  console.log("hello there, there is NOT null");
+          //  console.log(health.climate.description);
         }
 
         for (var i = 0; i < health.climate.climateInfo.length; i++) {
-          $('#test1').append('<h5>' + health.climate.climateInfo[i].category + '</h5>');
-          $('#test1').append('<p>' + health.climate.climateInfo[i].description + '</p>');
+          $('#test1').append('<h6>' + health.climate.climateInfo[i].category + '</h6>');
+          $('#test1').append('<p>' + health.climate.climateInfo[i].description + '</p><hr>');
         }
 
           //Law and Culture Info
-        $('#test1').append('<h4>Law and Culture Information: </h4>');
+        $('#test1').append('<h5>Law and Culture Information: </h5>');
 
         for (var i = 0; i < health.lawAndCulture.lawAndCultureInfo.length; i++) {
-          $('#test1').append('<h5>' + health.lawAndCulture.lawAndCultureInfo[i].category + '</h5>');
-          $('#test1').append('<p>' + health.lawAndCulture.lawAndCultureInfo[i].description + '</p>');          
-          console.log("hi");
+          $('#test1').append('<h6>' + health.lawAndCulture.lawAndCultureInfo[i].category + '</h6>');
+          $('#test1').append('<p>' + health.lawAndCulture.lawAndCultureInfo[i].description + '</p><hr>');          
         }
-
       
-        console.log(health.climate.climateInfo);
-        console.log(health.lawAndCulture.lawAndCultureInfo);
-
-        
+        // console.log(health.climate.climateInfo);
+        // console.log(health.lawAndCulture.lawAndCultureInfo);
 
         //Risks
         if (health.advisoryState == 0) {
-
           $('#advisorClear').text(health.advisoryText + '!');
           $("#advisorWarning").hide();
           $("#advisorCaution").hide();
           $('#test3').append('<p>'+health.advisories.description+'</p>');
-          
-
-        }
-
-        else if (health.advisoryState == 1) {
+        } else if (health.advisoryState == 1) {
           $('#advisorCaution').text(health.advisoryText + '!');
           $("#advisorClear").hide();
           $("#advisorWarning").hide();
           $('#test3').append('<p>'+health.advisories.description+'</p>');
           
-        }
-
-        else  {
+        } else  {
           $('#advisorWarning').text(health.advisoryText + '!');
           $("#advisorCaution").hide();
           $("#advisorClear").hide();
