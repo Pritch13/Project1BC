@@ -52,7 +52,6 @@ $(document).ready(function () {
       url: 'https://restcountries.eu/rest/v2/name/'+ countrySelected ,
       method: "GET",
     }).then(function (data) {
-      console.log(data[0].alpha2Code);
       
       var cc = data[0].alpha2Code;
 
@@ -72,7 +71,6 @@ $(document).ready(function () {
         '</p><hr><h5>'+health.health.diseasesAndVaccinesInfo.Vaccines[1].category+'</h5>');
 
         for (i = 2; i < health.health.diseasesAndVaccinesInfo.Vaccines.length; i++){
-          console.log(health.health.diseasesAndVaccinesInfo.Vaccines[i].category);
           $('#test2').append('<p>'+health.health.diseasesAndVaccinesInfo.Vaccines[i].category+'</p>')
         }
 
@@ -82,13 +80,12 @@ $(document).ready(function () {
         //Explore
           //Climate Info
         if (health.climate.description == null) {
-          $('#test1').append('<h4>Climate Description: </h4>');
-          console.log(health.climate.description);
-          console.log("hello there, this is null!");
+          $('#test1').append('<h5 class="title-font">Climate Description: </h5>');
+
+
           } else  {
-           $('#test1').append('<h4>Climate Description: </h4><p>' + health.climate.description + '</p>');
-           console.log("hello there, there is NOT null");
-           console.log(health.climate.description)
+           $('#test1').append('<h5>Climate Description: </h5><p>' + health.climate.description + '</p>');
+
         }
 
         for (var i = 0; i < health.climate.climateInfo.length; i++) {
@@ -102,12 +99,11 @@ $(document).ready(function () {
         for (var i = 0; i < health.lawAndCulture.lawAndCultureInfo.length; i++) {
           $('#test1').append('<h5>' + health.lawAndCulture.lawAndCultureInfo[i].category + '</h5>');
           $('#test1').append('<p>' + health.lawAndCulture.lawAndCultureInfo[i].description + '</p>');          
-          console.log("hi");
+
         }
 
       
-        console.log(health.climate.climateInfo);
-        console.log(health.lawAndCulture.lawAndCultureInfo);
+
 
         
 
