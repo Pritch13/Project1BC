@@ -136,14 +136,29 @@ body {
 }
 
 .tabs .tab a {
-    color: #0885a9;
-}
-
-.tabs .tab a.active {
-    color: #0885a9;
+    color: #0da5cf;
 }
 
 .tabs .tab a:hover {
-    color: #0885a9a9;
+    color: #044658a9;
 }
 
+.tabs .indicator {
+    background-color: #10c7fa;
+} 
+
+
+.tabs .tab a.active {
+    background-color: #10c9fc23;
+    color: #0da5cf;
+}
+
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: #10c9fc23;
+    color: #0da5cf;
+}
+
+.content {
+    margin-top: 60px;
+}
